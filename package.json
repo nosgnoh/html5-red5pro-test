@@ -1,0 +1,43 @@
+{
+  "name": "red5pro-html-sdk-testbed",
+  "version": "5.0.0",
+  "description": "Testbed examples for Red5 Pro HTML SDK",
+  "main": "src/js/index.js",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/infrared5/red5pro-html-sdk-testbed.git"
+  },
+  "keywords": [
+    "Red5",
+    "Red5Pro",
+    "Testbed",
+    "HTML",
+    "SDK"
+  ],
+  "author": "Infrared5, Inc.",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/infrared5/red5pro-html-sdk-testbed/issues"
+  },
+  "homepage": "https://github.com/infrared5/red5pro-html-sdk-testbed#readme",
+  "devDependencies": {
+    "eslint": "^3.8.0",
+    "gulp": "^3.9.1",
+    "gulp-bump": "^2.4.0",
+    "gulp-compile-handlebars": "^0.6.1",
+    "gulp-rename": "^1.2.2"
+  },
+  "scripts": {
+    "test": "nodemon index.js",
+    "clean:build": "rm -rf build",
+    "clean:dist": "rm -rf dist",
+    "build": "NODE_ENV=develop gulp build",
+    "predist": "npm run clean:dist",
+    "dist": "gulp bump-version && NODE_ENV=production gulp build",
+    "dist:webapp": "NODE_ENV=production gulp build:webapp"
+  },
+  "dependencies": {
+    "express": "^4.16.3",
+    "https": "^1.0.0"
+  }
+}
